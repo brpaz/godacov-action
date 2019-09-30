@@ -1,0 +1,21 @@
+name: 'Godacov'
+description: 'GitHub Action for godacov, a command-line tool to publish test coverage reports generated with go test to Codacy '
+author: 'Bruno Paz'
+inputs:
+  reportPath:
+    description: 'The path to the generated report file'
+    default: 'coverage.out'
+    required: true
+  commitId:
+    description: 'The identifier of the commit that is associated with the report'
+    required: true
+  codacyToken:
+    description: 'The token to authenticate with Codacy API'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.codacyToken }}
+    - ${{ inputs.reportPath }}
+    - ${{ inputs.commitSha }}

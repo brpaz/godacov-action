@@ -1,0 +1,10 @@
+schemaVersion: 2.0.0
+
+metadataTest:
+  entrypoint: ['/entrypoint.sh']
+
+commandTests:
+  - name: "Check Godacov is installed"
+    command: godacov
+    args: ["--help"]
+    exitCode: 0
