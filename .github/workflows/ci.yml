@@ -49,7 +49,7 @@ jobs:
         run: docker load -i action-image/action.tar
 
       - name: Run Structure tests
-        run:  docker run -i --rm -v /var/run/docker.sock:/var/run/docker.sock -v $PWD:/test zemanlx/container-structure-test:v1.8.0-alpine test --image $TEST_IMAGE_NAME--config test/structure-tests.yaml
+        run:  docker run -i --rm -v /var/run/docker.sock:/var/run/docker.sock -v $PWD:/test zemanlx/container-structure-test:v1.8.0-alpine test --image $TEST_IMAGE_NAME --config test/structure-tests.yaml
 
   release:
     name: Release
