@@ -1,7 +1,7 @@
 #!/bin/sh -l
 
 CODACY_TOKEN=$1
-RREPORT_PATH=$2
+REPORT_PATH=$2
 COMMIT_ID=$3
 
-/go/bin/godacov -t $CODACY_TOKEN -r $REPORT_PATH -c $COMMIT_ID
+/go/bin/godacov -r $REPORT_PATH -t $CODACY_TOKEN -c $COMMIT_ID
