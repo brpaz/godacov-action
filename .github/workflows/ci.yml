@@ -52,6 +52,7 @@ jobs:
         run:  docker run -i --rm -v /var/run/docker.sock:/var/run/docker.sock -v $PWD:/test zemanlx/container-structure-test:v1.8.0-alpine test --image $TEST_IMAGE_NAME --config test/structure-tests.yaml
 
   release:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     name: Release
     runs-on: ubuntu-latest
     needs: test
@@ -61,4 +62,4 @@ jobs:
         uses: brpaz/action-semantic-release@v1
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+
