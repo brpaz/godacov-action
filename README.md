@@ -1,6 +1,6 @@
 # Godacov Action
 
-> GitHub Action for [godacov](https://github.com/schrej/godacov), a command-line tool to publish test coverage reports generated with go test to [Codacy](https://codacy.com).
+> GitHub Action for [godacov](https://github.com/schrej/godacov), a command-line tool to publish test coverage reports generated with `go test` to [Codacy](https://codacy.com).
 
 [![GitHub Action](https://img.shields.io/badge/GitHub-Action-blue?style=for-the-badge)](https://github.com/features/actions)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
