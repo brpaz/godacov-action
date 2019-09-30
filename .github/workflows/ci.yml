@@ -6,7 +6,7 @@ on:
   pull_request:
 
 env:
-  TEST_IMAGE_NAME: godacov-action:$GITHUB_SHA
+  TEST_IMAGE_NAME: godacov-action:${{github.sha}}
 
 jobs:
   lint:
