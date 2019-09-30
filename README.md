@@ -44,7 +44,7 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Author
 
-👤 **Bruno Paz*
+👤 **Bruno Paz**
 
 * Website : [https://github.com/brpaz](https://github.com/brpaz)
 * Github: [@brpaz](https://github.com/brpaz)

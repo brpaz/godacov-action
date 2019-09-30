@@ -18,4 +18,4 @@ runs:
   args:
     - ${{ inputs.codacyToken }}
     - ${{ inputs.reportPath }}
-    - ${{ inputs.commitSha }}
+    - ${{ inputs.commitId }}
