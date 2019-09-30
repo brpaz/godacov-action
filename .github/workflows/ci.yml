@@ -58,7 +58,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Semantic Release
-        uses: brpaz/semantic-release@v1
+        uses: brpaz/action-semantic-release@v1
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
