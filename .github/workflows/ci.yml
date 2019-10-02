@@ -53,7 +53,7 @@ jobs:
         run: echo "##[set-output name=image;]$(echo $TEST_IMAGE_NAME)"
 
       - name: Run Structure tests
-        uses: brpaz/structure-tests-action@v1
+        uses: brpaz/structure-tests-action@v1.1.1
         with:
           image: ${{ steps.image_name.outputs.image }}
 
