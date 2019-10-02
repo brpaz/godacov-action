@@ -1,5 +1,5 @@
-name: 'Godacov'
-description: 'GitHub Action for godacov, a command-line tool to publish test coverage reports generated with go test to Codacy '
+name: 'Godacov Report'
+description: 'GitHub Action for godacov, a command-line tool to publish test coverage reports generated with go test to Codacy'
 author: 'Bruno Paz'
 branding:
   icon: 'file-text'

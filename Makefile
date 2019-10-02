@@ -1,14 +1,20 @@
 
-IMAGE_NAME:=godacov-github-action
+IMAGE_NAME:=godacov-action
 
-lint: ## Runs hadoint against application dockerfile
+setup: ## Setup the development environment
+	pre-commit install
+
+lint-dockerfile: ## Runs hadoint against application dockerfile
 	@docker run --rm -v "$(PWD):/data" -w "/data" hadolint/hadolint hadolint Dockerfile
+
+lint-yaml: ## Lints yaml configurations
+	@docker run --rm -v "$(PWD):/yaml" sdesbure/yamllint yamllint .
 
 build: ## Builds the docker image
 	@docker build . -t $(IMAGE_NAME)
 
 run: build ## Runs the container
-	@docker run -it --rm $(IMAGE_NAME) -v
+	@docker run -it --rm $(IMAGE_NAME) token cover.out 12345
 
 test: build ## Runs a test in the image
 	@docker run -i --rm \

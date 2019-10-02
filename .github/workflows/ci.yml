@@ -26,7 +26,7 @@ jobs:
         run: docker build -t $TEST_IMAGE_NAME .
 
       - name: Save Docker image artifact
-        run:  docker save -o action.tar $TEST_IMAGE_NAME
+        run: docker save -o action.tar $TEST_IMAGE_NAME
 
       - name: Upload image artifact
         uses: actions/upload-artifact@master
@@ -48,8 +48,14 @@ jobs:
       - name: Load image into docker context
         run: docker load -i action-image/action.tar
 
+      - name: Get Image Name
+        id: image_name
+        run: echo "##[set-output name=image;]$(echo $TEST_IMAGE_NAME)"
+
       - name: Run Structure tests
-        run:  docker run -i --rm -v /var/run/docker.sock:/var/run/docker.sock -v $PWD:/test zemanlx/container-structure-test:v1.8.0-alpine test --image $TEST_IMAGE_NAME --config test/structure-tests.yaml
+        uses: brpaz/structure-tests-action@v1
+        with:
+          image: ${{ steps.image_name.outputs.image }}
 
   release:
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
@@ -62,4 +68,3 @@ jobs:
         uses: brpaz/action-semantic-release@v1
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
