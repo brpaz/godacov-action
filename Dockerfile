@@ -1,4 +1,4 @@
-FROM golang:1.14-alpine
+FROM golang:1.15.3-alpine3.12
 
 RUN apk add --no-cache git~=2.24
 
