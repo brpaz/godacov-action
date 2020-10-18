@@ -54,6 +54,6 @@ Contributions are what make the open source community such an amazing place to b
 
 ## 📝 License
 
-Copyright © 2019 [Bruno Paz](https://github.com/brpaz).
+Copyright © 2020 [Bruno Paz](https://github.com/brpaz).
 
 This project is [MIT](LICENSE) licensed.
